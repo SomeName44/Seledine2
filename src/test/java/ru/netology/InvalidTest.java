@@ -77,10 +77,10 @@ public class InvalidTest {
         String dateOfMeeting = date(3, "dd.MM.yyyy");
         $("[data-test-id=date] input.input__control").sendKeys(dateOfMeeting);
         $("[data-test-id=name] input").setValue("Смирнов Петр");
-        $("[data-test-id=phone] input").setValue("+7123456789");
+        $("[data-test-id=phone] input").setValue("+7925123456");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
-        String expected = "Телефон указан неверно. Должно быть 11 цифр, например, +79251234567.";
+        String expected = "Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.";
         String actual = $("[data-test-id=phone] .input__sub").getText().trim();
         assertEquals(expected, actual);
     }
